@@ -15,8 +15,17 @@ class Db {
 
     public function query($sql){
         $query = $this->db->query($sql);
-        $result = $query->fetchColumn();
+        return $query;
     }
 
+    public function row($sql){
+        $result = $this->query($sql);
+        return $result->fetchAll();
+    }
+
+    public function column($sql){
+        $result = $this->query($sql);
+        return $result->fetchColumn();
+    }
 
 }
