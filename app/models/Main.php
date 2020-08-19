@@ -20,9 +20,9 @@ class Main extends Model{
         $this->group = htmlspecialchars($_POST['group']);
         $this->points = (int)$_POST['points'];
         if(strlen($this->firstName) > 30 or strlen($this->secondName) > 30 or strlen($this->group) > 20 or $this->points < 0 or $this->points > 300){
-            return false;
-        }else{
             return true;
+        }else{
+            return false;
         }
     }
 
@@ -32,18 +32,17 @@ class Main extends Model{
 
     public function addData(){
         if($this->setData()){
-            sleep(0,8);
-            $this->redirect('/');
+
         }else{
-            $this->redirect('/add');
+
         }
     }
 
     public function editData(){
         if($this->setData()){
-            $this->redirect('/');
+            //$this->redirect('/');
         }else{
-            $this->redirect('/edit');
+            //$this->redirect('/edit');
         }
     }
 

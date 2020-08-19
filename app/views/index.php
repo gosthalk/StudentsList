@@ -3,109 +3,20 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Second Name</th>
             <th scope="col">Group</th>
+            <th scope="col">Points</th>
         </tr>
         </thead>
         <tbody>
+
+        <!-- foreach posts -->
         <tr>
             <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td >Larry the Bird</td>
-            <td> Hellow</td>
-            <td>@twitter</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">5</th>
-            <td >Larry the Bird</td>
-            <td> Hellow</td>
-            <td>@twitter</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">6</th>
-            <td >Larry the Bird</td>
-            <td> Hellow</td>
-            <td>@twitter</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">7</th>
-            <td >Larry the Bird</td>
-            <td> Hellow</td>
-            <td>@twitter</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">8</th>
-            <td >Larry the Bird</td>
-            <td> Hellow</td>
-            <td>@twitter</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">9</th>
-            <td >Larry the Bird</td>
-            <td> Hellow</td>
-            <td>@twitter</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">10</th>
-            <td >Larry the Bird</td>
-            <td> Hellow</td>
-            <td>@twitter</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">11</th>
-            <td >Larry the Bird</td>
-            <td> Hellow</td>
-            <td>@twitter</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">12</th>
-            <td >Larry the Bird</td>
-            <td> Hellow</td>
-            <td>@twitter</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">13</th>
-            <td >Larry the Bird</td>
-            <td> Hellow</td>
-            <td>@twitter</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">14</th>
-            <td >Larry the Bird</td>
-            <td> Hellow</td>
-            <td>@twitter</td>
-            <td>1043</td>
-        </tr>
-        <tr>
-            <th scope="row">15</th>
-            <td >Larry the Bird</td>
-            <td> Hellow</td>
-            <td>@twitter</td>
             <td>1043</td>
         </tr>
         </tbody>
@@ -120,6 +31,7 @@
                     <span class="sr-only">Previous</span>
                 </a>
             </li>
+            <!-- foreach pages -->
             <li class="page-item"><a class="page-link" href="#">1</a></li>
             <li class="page-item"><a class="page-link" href="#">2</a></li>
             <li class="page-item"><a class="page-link" href="#">3</a></li>

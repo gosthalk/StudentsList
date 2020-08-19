@@ -21,7 +21,6 @@ class MainController extends Controller {
             $this->main->addData();
             $this->view->layout = 'custom';
             $this->view->render('Добавление', $this->main->isValid());
-            // разобраться почему оно не всегда выводит нужное
         }else{
             $this->view->layout = 'custom';
             $this->view->render('Добавление');
