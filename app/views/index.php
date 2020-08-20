@@ -12,13 +12,15 @@
         <tbody>
 
         <!-- foreach posts -->
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>1043</td>
-        </tr>
+        <?php foreach ($var as $person){ ?>
+                    <tr>
+                        <th scope="row"><?php echo $person["Id"]; ?></th>
+                        <td><?php echo $person["FirstName"]; ?></td>
+                        <td><?php echo $person["SecondName"]; ?></td>
+                        <td><?php echo $person["PartyId"]; ?></td>
+                        <td><?php echo $person["Points"]; ?></td>
+                    </tr>
+        <?php } ?>
         </tbody>
     </table>
 </div>

@@ -8,26 +8,43 @@ use app\lib\Db;
 class MainDataGateway {
 
     public $db;
+    public $count;
+    public $per_page;
 
     public function __construct()
     {
         $this->db = new Db();
     }
 
-    public function showData(){
+    public function pagesCount(){
+        $pagesCount = ceil($this->count / $this->per_page);
+        return $pagesCount;
+    }
+
+    public function showData($page){
         $this->db = new Db;
 
-        $per_page = 15; // colichestvo na str
-        $limit = 3;  // limit pages
+        $query = "SELECT COUNT(*) as count FROM students";
+        $this->count = (int)$this->db->column($query);
 
-        $cur_page = 1;
-
-        if(isset($_GET['page']) && $_GET['page'] > 0){
-            $cur_page = $_GET['page'];
+        if($page > $this->count){
+            $page = 1;
         }
-        $start = ($cur_page - 1) * $per_page;
 
-        $sql = "SELECT SQL_CALC_FOUND_ROWS * FROM students LIMIT ?i, ?i";
-        $this->db->query($sql);
+        $this->per_page = 15;
+        $from = ($page - 1) * $this->per_page;
+
+        $query = "SELECT * FROM students WHERE id > 0 LIMIT $from, $this->per_page";
+
+        $result = $this->db->row($query);
+
+        return $result;
+
     }
 }
+
+/*if (isset($_GET['page'])){
+    $page = $_GET['page'];
+}else{
+    $page = 1;
+}*/

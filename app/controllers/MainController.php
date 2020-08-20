@@ -5,14 +5,20 @@ namespace app\controllers;
 use app\core\Controller;
 use app\lib\Db;
 use app\models\Main;
+use app\models\MainDataGateway;
 
 class MainController extends Controller {
 
     public $flag = false;
+    public $data;
 
     public function indexAction(){
         //echo phpinfo();
-        $this->view->render('Главная страница');
+        $this->data = new MainDataGateway();
+        $result = $this->data->showData(1);
+        $count = $this->data->pagesCount();
+
+        $this->view->render('Главная страница', false, $result);
     }
 
     public function addAction(){

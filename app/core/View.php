@@ -18,7 +18,7 @@ class View {
         $this->model = new Main();
     }
 
-    public function render($title, $flag = false){
+    public function render($title, $flag = false, $var = []){
         if(file_exists('app/views/'.$this->path.'.php')) {
             ob_start();
             require 'app/views/' . $this->path . '.php';
