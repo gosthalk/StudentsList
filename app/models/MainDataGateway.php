@@ -31,7 +31,7 @@ class MainDataGateway {
             $page = 1;
         }
 
-        $this->per_page = 15;
+        $this->per_page = 10;
         $from = ($page - 1) * $this->per_page;
 
         $query = "SELECT * FROM students WHERE id > 0 LIMIT $from, $this->per_page";
@@ -42,9 +42,3 @@ class MainDataGateway {
 
     }
 }
-
-/*if (isset($_GET['page'])){
-    $page = $_GET['page'];
-}else{
-    $page = 1;
-}*/

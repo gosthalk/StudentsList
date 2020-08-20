@@ -13,12 +13,20 @@ class MainController extends Controller {
     public $data;
 
     public function indexAction(){
-        //echo phpinfo();
-        $this->data = new MainDataGateway();
-        $result = $this->data->showData(1);
-        $count = $this->data->pagesCount();
 
-        $this->view->render('Главная страница', false, $result);
+        if (isset($_GET['page'])){
+            $page = $_GET['page'];
+        }else{
+            $page = 1;
+        }
+
+        //$id = $this->route['page'];
+
+        $this->data = new MainDataGateway();
+        $result = $this->data->showData($page);
+        $count = (int)$this->data->pagesCount();
+
+        $this->view->render('Главная страница', false, $result, $count);
     }
 
     public function addAction(){
