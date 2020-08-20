@@ -14,13 +14,11 @@ class MainController extends Controller {
 
     public function indexAction(){
 
-        if (isset($_GET['page'])){
-            $page = $_GET['page'];
+        if (isset($this->route['page'])){
+            $page = $this->route['page'];
         }else{
             $page = 1;
         }
-
-        //$id = $this->route['page'];
 
         $this->data = new MainDataGateway();
         $result = $this->data->showData($page);

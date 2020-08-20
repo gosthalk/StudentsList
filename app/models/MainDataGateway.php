@@ -27,11 +27,14 @@ class MainDataGateway {
         $query = "SELECT COUNT(*) as count FROM students";
         $this->count = (int)$this->db->column($query);
 
-        if($page > $this->count){
+        $this->per_page = 10;
+
+        $pc = (int)$this->pagesCount();
+
+        if($page > $pc){
             $page = 1;
         }
 
-        $this->per_page = 10;
         $from = ($page - 1) * $this->per_page;
 
         $query = "SELECT * FROM students WHERE id > 0 LIMIT $from, $this->per_page";
