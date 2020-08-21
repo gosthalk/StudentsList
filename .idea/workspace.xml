@@ -22,8 +22,8 @@
     <list default="true" id="2a4e13ea-745f-47b3-b866-71f2ca29f201" name="Default Changelist" comment="changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/MainDataGateway.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/MainDataGateway.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/access.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
     </list>
@@ -74,7 +74,7 @@
       <workItem from="1597767128951" duration="6564000" />
       <workItem from="1597840316265" duration="4726000" />
       <workItem from="1597936337733" duration="14139000" />
-      <workItem from="1598031448944" duration="2876000" />
+      <workItem from="1598031448944" duration="5280000" />
     </task>
     <task id="LOCAL-00001" summary="changes">
       <created>1597840852240</created>

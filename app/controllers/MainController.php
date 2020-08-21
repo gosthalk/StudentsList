@@ -33,7 +33,7 @@ class MainController extends Controller {
         if(isset($_POST['add'])){
             $this->main->addData();
             $this->view->layout = 'custom';
-            $this->view->render('Добавление', $this->main->isValid());
+            $this->view->render('Добавление', $this->main->isNonValid());
         }else{
             $this->view->layout = 'custom';
             $this->view->render('Добавление');

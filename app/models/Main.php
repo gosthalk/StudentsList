@@ -13,6 +13,7 @@ class Main extends Model{
     public $group;
     public $points;
     public $flag;
+    public $add;
 
     public function setData(){
         $this->firstName = htmlspecialchars($_POST['firstName']);
@@ -26,15 +27,17 @@ class Main extends Model{
         }
     }
 
-    public function isValid(){
+    public function isNonValid(){
         return $this->setData();
     }
 
     public function addData(){
-        if($this->setData()){
-
+        if(!$this->isNonValid()){
+            $this->add = new MainDataGateway();
+            $this->add->addData($this->firstName, $this->secondName, $this->group, $this->points);
+            var_dump('yes');
         }else{
-
+            var_dump($this->firstName);
         }
     }
 

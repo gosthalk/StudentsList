@@ -44,4 +44,13 @@ class MainDataGateway {
         return $result;
 
     }
+
+    public function addData($firstName, $secondName, $group, $points){
+        $this->db = new Db();
+
+        $query = "INSERT INTO students (FirstName, SecondName, PartyId, Points) VALUES ('$firstName', '$secondName', '$group', $points)";
+
+        $this->db->query($query);
+    }
+
 }
