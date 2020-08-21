@@ -14,7 +14,7 @@ class MainController extends Controller {
 
     public function indexAction(){
 
-        if (isset($this->route['page'])){
+        if (isset($this->route['page']) && gettype($this->route['page']) == 'integer'){
             $page = $this->route['page'];
         }else{
             $page = 1;
@@ -23,8 +23,9 @@ class MainController extends Controller {
         $this->data = new MainDataGateway();
         $result = $this->data->showData($page);
         $count = (int)$this->data->pagesCount();
+        //var_dump($count);
 
-        $this->view->render('Главная страница', false, $result, $count);
+        $this->view->render('Главная страница', false, $result, $count, $page);
     }
 
     public function addAction(){

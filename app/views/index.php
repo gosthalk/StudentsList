@@ -34,9 +34,14 @@
                 </a>
             </li>
             <!-- foreach pages -->
-            <?php for($i = 1;$i<=$count;$i++){ ?>
-            <li class="page-item"><a class="page-link" href="<?php echo $i; ?>"> <?php echo $i; ?> </a></li>
-            <?php } ?>
+            <?php
+                if($count < 5) foreach (range(1,$count) as $p) echo '<li class="page-item"><a class="page-link" href="/'. $p .'">'. $p .'</a></li>';
+                if($count > 4 && $cur_page < 5) foreach (range(1, 5) as $p) echo '<li class="page-item"><a class="page-link" href="/'. $p .'">'. $p .'</a></li>';
+                if($count - 5 < 5 && $cur_page > 5) foreach (range($count - 4, $count) as $p) echo '<li class="page-item"><a class="page-link" href="/'. $p .'">'. $p .'</a></li>';
+                if($count > 4 && $count - 5 < 5 && $cur_page == 5) foreach (range($cur_page - 2, $count - 2) as $p) echo '<li class="page-item"><a class="page-link" href="/'. $p .'">'. $p .'</a></li>';
+                if($count > 4 && $count - 5 > 5 && $cur_page >= 5 && $cur_page <= $count - 4) foreach (range($cur_page - 2,$cur_page + 2) as $p) echo '<li class="page-item"><a class="page-link" href="/'. $p .'">'. $p .'</a></li>';
+                if($count > 4 && $count - 5 > 5 && $cur_page > $count - 4) foreach (range($count-4,$count) as $p) echo '<li class="page-item"><a class="page-link" href="/'. $p .'">'. $p .'</a></li>';
+            ?>
             <li class="page-item">
                 <a class="page-link" href="<?php echo $count; ?>" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
@@ -46,3 +51,5 @@
         </ul>
     </nav>
 </div>
+
+<!-- <li class="page-item"><a class="page-link" href="<?php echo $i; ?>"> <?php echo $i; ?> </a></li> -->
