@@ -18,7 +18,7 @@
             <input type="number" name="points" class="form-control" id="inputPoints" placeholder="<?php echo $person['Points']; ?>">
         </div>
         <div class="d-flex justify-content-center">
-            <button type="submit" name="edit" class="btn btn-primary">Edit</button>
+            <button type="submit" name="edit" class="btn btn-primary"> Изменить </button>
         </div>
         <?php } ?>
     </form>

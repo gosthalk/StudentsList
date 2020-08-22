@@ -118,12 +118,14 @@ class MainDataGateway {
     public function editData($firstName, $secondName, $group, $points, $id){
         $this->db = new Db();
 
-        var_dump($id);
         $query = "UPDATE students SET FirstName='$firstName', SecondName='$secondName', PartyId='$group', Points=$points WHERE Id=$id";
         $this->db->query($query);
     }
 
-    public function deleteData(){
+    public function deleteData($id){
+        $this->db = new Db();
 
+        $query = "DELETE FROM students WHERE Id=$id";
+        $this->db->query($query);
     }
 }

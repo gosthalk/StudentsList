@@ -17,20 +17,20 @@
                 <a class="navbar-brand text-danger" href="/">StudentsList</a>
                 <form action='/search' method="post" class="form-inline">
                     <input class="form-control mr-sm-2 flex-grow-2" type="search" placeholder="Search" aria-label="Search" name="searchData">
-                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" name="search">Search</button>
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" name="search">Искать</button>
                 </form>
                 <?php if(isset($_COOKIE['id'])) { ?>
                 <div class="d-flex mx-3">
                     <form action="/edit" method="post">
-                        <button type="submit" class="btn btn-primary mr-sm-2">Edit</button>
+                        <button type="submit" class="btn btn-primary mr-sm-2">Изменить</button>
                     </form>
                     <form action="/delete" method="post">
-                        <button type="submit" class="btn btn-outline-danger mr-sm-2">Delete</button>
+                        <button type="submit" class="btn btn-outline-danger mr-sm-2">Удалить</button>
                     </form>
                 </div>
                 <?php }else{ ?>
                 <form action="/add" method="post">
-                    <button type="submit" class="btn btn-outline-danger mr-sm-2">Add</button>
+                    <button type="submit" class="btn btn-outline-danger mr-sm-2">Добавить</button>
                 </form>
                 <?php } ?>
             </nav>

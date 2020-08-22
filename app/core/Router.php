@@ -48,13 +48,13 @@ class Router {
                     $controller = new $path($this->params);
                     $controller->$action();
                 }else{
-                    echo 'Action не найден : ' .$action;
+                    echo '<h1 class="mt-5" style="text-align: center">ERROR 404</h1>';
                 }
             }else{
-                echo 'Контроллер не найден :' .$path;
+                echo '<h1 class="mt-5" style="text-align: center">ERROR 404</h1>';
             }
         }else{
-            echo 'Маршрут не найден!';
+            echo '<h1 class="mt-5" style="text-align: center">ERROR 404</h1>';
         }
     }
 

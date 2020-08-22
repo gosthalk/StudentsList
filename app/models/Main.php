@@ -53,8 +53,8 @@ class Main extends Model{
     }
 
     public function deleteData(){
-        // ask for really want to delete
-        // delete from db
+        $this->gateway = new MainDataGateway();
+        $this->gateway->deleteData($_COOKIE['id']);
     }
 
     public function redirect($url){

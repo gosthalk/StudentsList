@@ -3,10 +3,10 @@
         <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Second Name</th>
-            <th scope="col">Group</th>
-            <th scope="col">Points</th>
+            <th scope="col">Имя</th>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Группа</th>
+            <th scope="col">Баллы</th>
         </tr>
         </thead>
         <tbody>

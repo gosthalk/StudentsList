@@ -20,13 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a4e13ea-745f-47b3-b866-71f2ca29f201" name="Default Changelist" comment="changes">
+      <change afterPath="$PROJECT_DIR$/app/views/delete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/MainDataGateway.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/MainDataGateway.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/default.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/access.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
     </list>
@@ -84,7 +87,7 @@
       <workItem from="1597840316265" duration="4726000" />
       <workItem from="1597936337733" duration="14139000" />
       <workItem from="1598031448944" duration="5417000" />
-      <workItem from="1598098158245" duration="10871000" />
+      <workItem from="1598098158245" duration="13261000" />
     </task>
     <task id="LOCAL-00001" summary="changes">
       <created>1597840852240</created>
@@ -157,10 +160,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1021" y="391" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596918620943" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1598100446721">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1598109940271">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598100446721" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598109940271" />
     <state x="332" y="0" key="SettingsEditor" timestamp="1596624928231">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -53,7 +53,6 @@ class MainController extends Controller {
         if(!isset($_COOKIE['id'])) {
             if (isset($_POST['add'])) {
                 $this->main->addData();
-                $this->view->layout = 'custom';
                 $this->main->redirect('/');
             } else {
                 $this->view->layout = 'custom';
@@ -67,7 +66,6 @@ class MainController extends Controller {
     public function editAction(){
         if(isset($_POST['edit'])){
             $this->main->editData();
-            $this->view->layout = 'custom';
             $this->main->redirect('/');
         }else{
             $this->data = new MainDataGateway();
@@ -79,7 +77,21 @@ class MainController extends Controller {
     }
 
     public function deleteAction(){
-
+        if(isset($_COOKIE['id'])) {
+            if(isset($_POST['delete_yes'])){
+                $this->main->deleteData();
+                unset($_COOKIE['id']);
+                setcookie('id', null, -1, '/');
+                $this->main->redirect('/');
+            }
+            elseif (isset($_POST['delete_no'])){
+                $this->main->redirect('/');
+            }else{
+                $this->view->render('Удаление');
+            }
+        }else{
+            $this->main->redirect('/');
+        }
     }
 
     public static function errorCode($code){
