@@ -19,9 +19,20 @@
                     <input class="form-control mr-sm-2 flex-grow-2" type="search" placeholder="Search" aria-label="Search" name="searchData">
                     <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" name="search">Search</button>
                 </form>
+                <?php if(isset($_COOKIE['id'])) { ?>
+                <div class="d-flex mx-3">
+                    <form action="/edit" method="post">
+                        <button type="submit" class="btn btn-primary mr-sm-2">Edit</button>
+                    </form>
+                    <form action="/delete" method="post">
+                        <button type="submit" class="btn btn-outline-danger mr-sm-2">Delete</button>
+                    </form>
+                </div>
+                <?php }else{ ?>
                 <form action="/add" method="post">
                     <button type="submit" class="btn btn-outline-danger mr-sm-2">Add</button>
                 </form>
+                <?php } ?>
             </nav>
         </header>
 

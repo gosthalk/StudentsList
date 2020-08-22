@@ -50,19 +50,36 @@ class MainController extends Controller {
 
     public function addAction(){
         //var_dump(isset($_POST['add']));
-        if(isset($_POST['add'])){
-            $this->main->addData();
-            $this->view->layout = 'custom';
-            $this->view->render('Добавление', $this->main->isNonValid());
+        if(!isset($_COOKIE['id'])) {
+            if (isset($_POST['add'])) {
+                $this->main->addData();
+                $this->view->layout = 'custom';
+                $this->main->redirect('/');
+            } else {
+                $this->view->layout = 'custom';
+                $this->view->render('Добавление');
+            }
         }else{
-            $this->view->layout = 'custom';
-            $this->view->render('Добавление');
+            $this->main->redirect('/');
         }
     }
 
     public function editAction(){
-        $this->view->layout = 'custom';
-        $this->view->render('Изменение', $this->main->isValid());
+        if(isset($_POST['edit'])){
+            $this->main->editData();
+            $this->view->layout = 'custom';
+            $this->main->redirect('/');
+        }else{
+            $this->data = new MainDataGateway();
+            $result = $this->data->getData($_COOKIE['id']);
+
+            $this->view->layout = 'custom';
+            $this->view->render('Добавление',false, $result);
+        }
+    }
+
+    public function deleteAction(){
+
     }
 
     public static function errorCode($code){

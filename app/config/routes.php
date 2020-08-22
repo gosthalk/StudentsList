@@ -31,4 +31,9 @@ return [
         'action' => 'edit',
     ],
 
+    'delete' => [
+        'controller' => 'main',
+        'action' => 'delete'
+    ],
+
 ];

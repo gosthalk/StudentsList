@@ -82,7 +82,48 @@ class MainDataGateway {
             $result = $this->db->row($query);
             return $result;
         }
-
     }
 
+    public function setCookies($firstName, $secondName, $group, $points){
+        $this->db = new Db();
+
+        $query = "SELECT * FROM students ORDER BY id DESC LIMIT 1";
+        $result = $this->db->row($query);
+
+        //var_dump($result);
+
+        foreach ($result as $p){
+            if($firstName == $p['FirstName'] and $secondName == $p['SecondName'] and $group == $p['PartyId'] and $points == $p['Points']){
+                $query = "SELECT Id FROM students WHERE FirstName='$firstName' AND SecondName='$secondName' AND PartyID='$group' AND Points=$points";
+                $result = (int)$this->db->column($query);
+            }else{
+                exit();
+            }
+        }
+        $id = $result;
+        //var_dump($id);
+        return $id;
+    }
+
+    public function getData($id){
+        $this->db = new Db();
+
+        $query = "SELECT * FROM students WHERE Id=$id";
+        $result = $this->db->row($query);
+        //var_dump($result);
+
+        return $result;
+    }
+
+    public function editData($firstName, $secondName, $group, $points, $id){
+        $this->db = new Db();
+
+        var_dump($id);
+        $query = "UPDATE students SET FirstName='$firstName', SecondName='$secondName', PartyId='$group', Points=$points WHERE Id=$id";
+        $this->db->query($query);
+    }
+
+    public function deleteData(){
+
+    }
 }

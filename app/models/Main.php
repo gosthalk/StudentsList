@@ -13,7 +13,7 @@ class Main extends Model{
     public $group;
     public $points;
     public $flag;
-    public $add;
+    public $gateway;
 
     public function setData(){
         $this->firstName = htmlspecialchars($_POST['firstName']);
@@ -33,19 +33,22 @@ class Main extends Model{
 
     public function addData(){
         if(!$this->isNonValid()){
-            $this->add = new MainDataGateway();
-            $this->add->addData($this->firstName, $this->secondName, $this->group, $this->points);
-            var_dump('yes');
+            $this->gateway = new MainDataGateway();
+            $this->gateway->addData($this->firstName, $this->secondName, $this->group, $this->points);
+            $id = $this->gateway->setCookies($this->firstName, $this->secondName, $this->group, $this->points);
+            setcookie('id', $id, time() + (1000 * 60 * 60 * 24 * 30));
         }else{
             var_dump($this->firstName);
         }
     }
 
     public function editData(){
-        if($this->setData()){
-            //$this->redirect('/');
+        if(!$this->isNonValid()){
+            var_dump($_COOKIE['id']);
+            $this->gateway = new MainDataGateway();
+            $this->gateway->editData($this->firstName, $this->secondName, $this->group, $this->points, $_COOKIE['id']);
         }else{
-            //$this->redirect('/edit');
+            var_dump($this->firstName);
         }
     }
 
@@ -55,13 +58,7 @@ class Main extends Model{
     }
 
     public function redirect($url){
-        if($this->flag) {
-            $this->flag = true;
-            header('location: ' . $url);
-        }else{
-            $this->flag = false;
-            header('location: ' . $url);
-        }
+        header('location: ' . $url);
     }
 
 }
