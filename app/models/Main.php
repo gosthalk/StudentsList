@@ -38,7 +38,7 @@ class Main extends Model{
             $id = $this->gateway->setCookies($this->firstName, $this->secondName, $this->group, $this->points);
             setcookie('id', $id, time() + (1000 * 60 * 60 * 24 * 30));
         }else{
-            var_dump($this->firstName);
+            $this->redirect('add');
         }
     }
 

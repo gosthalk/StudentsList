@@ -47,8 +47,10 @@ class MainController extends Controller {
 
     public function addAction(){
         //var_dump(isset($_POST['add']));
+
         if(!isset($_COOKIE['id'])) {
             if (isset($_POST['add'])) {
+                var_dump(1);
                 $this->main->addData();
                 $this->main->redirect('/');
             } else {
@@ -61,15 +63,19 @@ class MainController extends Controller {
     }
 
     public function editAction(){
-        if(isset($_POST['edit'])){
-            $this->main->editData();
-            $this->main->redirect('/');
-        }else{
-            $this->data = new MainDataGateway();
-            $result = $this->data->getData($_COOKIE['id']);
+        if(isset($_COOKIE['id'])) {
+            if (isset($_POST['edit'])) {
+                $this->main->editData();
+                $this->main->redirect('/');
+            } else {
+                $this->data = new MainDataGateway();
+                $result = $this->data->getData($_COOKIE['id']);
 
-            $this->view->layout = 'custom';
-            $this->view->render('Добавление',false, $result);
+                $this->view->layout = 'custom';
+                $this->view->render('Добавление', false, $result);
+            }
+        }else{
+            $this->main->redirect('/');
         }
     }
 
