@@ -32,6 +32,7 @@ class MainController extends Controller {
 
         if (isset($this->route['page']) && gettype($this->route['page']) == 'integer') {
             $page = $this->route['page'];
+            $_SESSION['setPage'] = true;
         } else {
             $page = 1;
         }
@@ -41,7 +42,7 @@ class MainController extends Controller {
         $count = (int)$this->data->pagesCount();
 
         $this->view->render('Поиск', false, $result, $count, $page);
-
+        $_SESSION['setPage'] = false;
     }
 
     public function addAction(){
