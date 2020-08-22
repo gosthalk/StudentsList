@@ -11,6 +11,16 @@ return [
         'action' => 'index',
     ],
 
+    'search' => [
+        'controller' => 'main',
+        'action' => 'search',
+    ],
+
+    'search/{page:\d+}' => [
+        'controller' => 'main',
+        'action' => 'search',
+    ],
+
     'add' => [
         'controller' => 'main',
         'action' => 'add',

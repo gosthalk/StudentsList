@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+        <link rel="shortcut icon" href="app/views/layouts/styles/icon.ico" type="image/x-icon">
 
         <title><?php echo $title; ?></title>
 
@@ -14,9 +15,9 @@
         <header>
             <nav class="navbar d-flex justify-content-around navbar-light bg-dark">
                 <a class="navbar-brand text-danger" href="/">StudentsList</a>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2 flex-grow-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+                <form action='/search' method="post" class="form-inline">
+                    <input class="form-control mr-sm-2 flex-grow-2" type="search" placeholder="Search" aria-label="Search" name="searchData">
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" name="search">Search</button>
                 </form>
                 <form action="/add" method="post">
                     <button type="submit" class="btn btn-outline-danger mr-sm-2">Add</button>

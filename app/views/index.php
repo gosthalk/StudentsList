@@ -2,7 +2,7 @@
     <table class="table table-hover">
         <thead>
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">ID</th>
             <th scope="col">First Name</th>
             <th scope="col">Second Name</th>
             <th scope="col">Group</th>
