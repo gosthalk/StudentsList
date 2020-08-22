@@ -30,22 +30,18 @@ class MainController extends Controller {
 
     public function searchAction(){
 
-        if(isset($_POST['search'])) {
-
-            if (isset($this->route['page']) && gettype($this->route['page']) == 'integer') {
-                $page = $this->route['page'];
-            } else {
-                $page = 1;
-            }
-
-            $this->data = new MainDataGateway();
-            $result = $this->data->searchData($_POST['searchData'], $page);
-            $count = (int)$this->data->pagesCount();
-
-            $this->view->render('Поиск', false, $result, $count, $page);
-        }else{
-            $this->main->redirect('/');
+        if (isset($this->route['page']) && gettype($this->route['page']) == 'integer') {
+            $page = $this->route['page'];
+        } else {
+            $page = 1;
         }
+
+        $this->data = new MainDataGateway();
+        $result = $this->data->searchData($page);
+        $count = (int)$this->data->pagesCount();
+
+        $this->view->render('Поиск', false, $result, $count, $page);
+
     }
 
     public function addAction(){

@@ -53,8 +53,11 @@ class MainDataGateway {
         $this->db->query($query);
     }
 
-    public function searchData($data, $page){
+    public function searchData($page){
         $this->db = new Db();
+        if(isset($_POST['searchData']))
+            $_SESSION['searchData'] = $_POST['searchData'];
+        $data = $_SESSION['searchData'];
 
         $query = "SELECT COUNT(*) as count FROM students WHERE FirstName LIKE '$data' OR SecondName LIKE '$data' OR PartyId LIKE '$data'";
         $this->count = (int)$this->db->column($query);

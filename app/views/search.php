@@ -28,22 +28,22 @@
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <li class="page-item">
-                <a class="page-link" href="search" aria-label="Previous">
+                <a class="page-link" href="1" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                     <span class="sr-only">Previous</span>
                 </a>
             </li>
             <!-- foreach pages -->
             <?php
-            if($count < 5) foreach (range(1,$count) as $p) echo '<li class="page-item"><a class="page-link" href="search/'. $p .'">'. $p .'</a></li>';
-            if($count > 4 && $cur_page < 5) foreach (range(1, 5) as $p) echo '<li class="page-item"><a class="page-link" href="search/'. $p .'">'. $p .'</a></li>';
-            if($count - 5 < 5 && $cur_page > 5) foreach (range($count - 4, $count) as $p) echo '<li class="page-item"><a class="page-link" href="search/'. $p .'">'. $p .'</a></li>';
-            if($count > 4 && $count - 5 < 5 && $cur_page == 5) foreach (range($cur_page - 2, $count - 2) as $p) echo '<li class="page-item"><a class="page-link" href="search/'. $p .'">'. $p .'</a></li>';
-            if($count > 4 && $count - 5 > 5 && $cur_page >= 5 && $cur_page <= $count - 4) foreach (range($cur_page - 2,$cur_page + 2) as $p) echo '<li class="page-item"><a class="page-link" href="search/'. $p .'">'. $p .'</a></li>';
-            if($count > 4 && $count - 5 > 5 && $cur_page > $count - 4) foreach (range($count-4,$count) as $p) echo '<li class="page-item"><a class="page-link" href="search/'. $p .'">'. $p .'</a></li>';
+            if($count < 5) foreach (range(1,$count) as $p) echo '<li class="page-item"><a class="page-link" href="/search/'. $p .'">'. $p .'</a></li>';
+            if($count > 4 && $cur_page < 5) foreach (range(1, 5) as $p) echo '<li class="page-item"><a class="page-link" href="/search/'. $p .'">'. $p .'</a></li>';
+            if($count - 5 < 5 && $cur_page > 5) foreach (range($count - 4, $count) as $p) echo '<li class="page-item"><a class="page-link" href="/search/'. $p .'">'. $p .'</a></li>';
+            if($count > 4 && $count - 5 < 5 && $cur_page == 5) foreach (range($cur_page - 3, $count) as $p) echo '<li class="page-item"><a class="page-link" href="/search/'. $p .'">'. $p .'</a></li>';
+            if($count > 4 && $count - 5 > 5 && $cur_page >= 5 && $cur_page <= $count - 4) foreach (range($cur_page - 2,$cur_page + 2) as $p) echo '<li class="page-item"><a class="page-link" href="/search/'. $p .'">'. $p .'</a></li>';
+            if($count > 4 && $count - 5 > 5 && $cur_page > $count - 4) foreach (range($count-4,$count) as $p) echo '<li class="page-item"><a class="page-link" href="/search/'. $p .'">'. $p .'</a></li>';
             ?>
             <li class="page-item">
-                <a class="page-link" href="search/<?php echo $count; ?>" aria-label="Next">
+                <a class="page-link" href="<?php echo $count; ?>" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                     <span class="sr-only">Next</span>
                 </a>
