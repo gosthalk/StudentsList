@@ -20,7 +20,7 @@ class Main extends Model{
         $this->secondName = htmlspecialchars($_POST['secondName']);
         $this->group = htmlspecialchars($_POST['group']);
         $this->points = (int)$_POST['points'];
-        if(strlen($this->firstName) > 30 or strlen($this->secondName) > 30 or strlen($this->group) > 20 or $this->points < 0 or $this->points > 300){
+        if(strlen($this->firstName) > 30 or empty($this->firstName) or strlen($this->secondName) > 30 or empty($this->secondName) or strlen($this->group) > 20 or empty($this->group) or $this->points < 0 or $this->points > 300){
             return true;
         }else{
             return false;
@@ -48,7 +48,7 @@ class Main extends Model{
             $this->gateway = new MainDataGateway();
             $this->gateway->editData($this->firstName, $this->secondName, $this->group, $this->points, $_COOKIE['id']);
         }else{
-            var_dump($this->firstName);
+            $this->redirect('edit');
         }
     }
 
